@@ -1,0 +1,62 @@
+.scene{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px;
+}
+
+.cube{
+    $size: 300px;
+    transform: rotateX(328deg) rotateY(37deg) rotateZ(6deg);
+    width: $size;
+    height: $size;
+    // border: 1px solid red;
+    transform-style: preserve-3d;
+    transition: transform .4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_side{
+        width: $size;
+        height: $size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        position: absolute;
+        background: transparent;
+    }
+
+    &_right{
+        transform: rotateY(90deg) translateZ($size/2);
+        background-color: rgba(29, 142, 142, 0.792);
+    }
+    &_left{
+        transform: rotateY(-90deg) translateZ($size/2);
+        background-color: rgba(29, 142, 142, 0.792);
+    }
+
+    &_top{
+        transform: translateY(-$size/2) rotateX(90deg);
+        background-color: rgba(255, 191, 80, 0.493);
+    }
+
+    &_bottom{
+        transform: translateY($size/2) rotateX(-90deg);
+        background-color: rgba(255, 191, 80, 0.493);
+    }
+
+    &_front{
+        transform: translateZ($size/2);
+        background-color: rgba(23, 166, 188, 0.622);
+    }
+
+    &_back{
+        transform: translateZ(-$size/2);
+        background-color: rgba(23, 188, 28, 0.829);
+    }
+}
